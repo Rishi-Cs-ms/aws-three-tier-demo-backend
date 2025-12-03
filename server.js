@@ -4,7 +4,13 @@ const cors = require('cors');
 const db = require('./db');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: "https://d1j86t7izf9l0w.cloudfront.net",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+}));
+
 const port = 3000;
 
 app.use(express.json());
